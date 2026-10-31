@@ -63,7 +63,7 @@ https://templatemo.com/tm-582-tale-seo-agency
 <script type="text/javascript">var _iub = _iub || {}; _iub.cons_instructions = _iub.cons_instructions || []; _iub.cons_instructions.push(["init", {api_key: "lABf49mKef9xp9RD4XaZ91z2XjeI3jXg"}]);</script><script type="text/javascript" src="https://cdn.iubenda.com/cons/iubenda_cons.js" async></script>    
 <style>
   #contact-form .consent-checkboxes { margin-bottom: 20px; }
-  #contact-form .consent-checkboxes p { margin: 0 0 10px; font-size: 14px; line-height: 1.5; }
+  #contact-form .consent-checkboxes p { margin: 0 0 10px; font-size: 14px; line-height: 1.5; color: #000; }
   #contact-form .consent-checkboxes label { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; }
   #contact-form .consent-checkboxes input[type="checkbox"] {
     width: 16px; height: 16px; margin: 3px 0 0; padding: 0; flex-shrink: 0;
@@ -374,10 +374,14 @@ https://templatemo.com/tm-582-tale-seo-agency
         <div class="col-lg-12">
       <fieldset class="consent-checkboxes">
         <p>
-          <label>
-            <input type="checkbox" name="documents" data-cons-preference="legal_documents" required/>
-            I've read the Privacy Policy and accept the Terms and Conditions
-          </label>
+         <label>
+          <input type="checkbox" name="generic" data-cons-preference="legal_documents" required/>
+          I've read the
+          <a href="https://www.iubenda.com/privacy-policy/57392063" target="_blank" rel="noopener">Privacy Policy</a>,
+          <a href="https://www.iubenda.com/privacy-policy/57392063/cookie-policy" target="_blank" rel="noopener">Cookie Policy</a>
+          and accept the
+          <a href="https://www.iubenda.com/terms-and-conditions/57392063" target="_blank" rel="noopener">Terms and Conditions</a>
+        </label>
         </p>
         <p>
           <label>
@@ -387,7 +391,7 @@ https://templatemo.com/tm-582-tale-seo-agency
         </p>
         <p>
           <label>
-            <input type="checkbox" name="dem" data-cons-preference="dem"/>
+            <input type="checkbox" name="newsletter" data-cons-preference="newsletter"/>
             I agree to receiving a newsletter with information and offers about products and services by third parties (optional)
           </label>
         </p>
