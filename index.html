@@ -61,7 +61,15 @@ https://templatemo.com/tm-582-tale-seo-agency
 -->
 <!-- Script for the Consent Database -->    
 <script type="text/javascript">var _iub = _iub || {}; _iub.cons_instructions = _iub.cons_instructions || []; _iub.cons_instructions.push(["init", {api_key: "lABf49mKef9xp9RD4XaZ91z2XjeI3jXg"}]);</script><script type="text/javascript" src="https://cdn.iubenda.com/cons/iubenda_cons.js" async></script>    
-  </head>
+<style>
+  #contact-form .consent-checkboxes { margin-bottom: 20px; }
+  #contact-form .consent-checkboxes p { margin: 0 0 10px; font-size: 14px; line-height: 1.5; }
+  #contact-form .consent-checkboxes label { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; }
+  #contact-form .consent-checkboxes input[type="checkbox"] {
+    width: 16px; height: 16px; margin: 3px 0 0; padding: 0; flex-shrink: 0;
+  }
+</style>
+</head>
 
 <body>
 
@@ -361,6 +369,28 @@ https://templatemo.com/tm-582-tale-seo-agency
     <div class="col-lg-12">
       <fieldset>
         <textarea name="message" id="message" placeholder="Your Message"></textarea>
+      </fieldset>
+    </div>
+        <div class="col-lg-12">
+      <fieldset class="consent-checkboxes">
+        <p>
+          <label>
+            <input type="checkbox" name="documents" data-cons-preference="legal_documents" required/>
+            I've read the Privacy Policy and accept the Terms and Conditions
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" name="newsletter" data-cons-preference="newsletter"/>
+            I agree to receiving a newsletter with information and offers regarding this service (optional)
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" name="dem" data-cons-preference="dem"/>
+            I agree to receiving a newsletter with information and offers about products and services by third parties (optional)
+          </label>
+        </p>
       </fieldset>
     </div>
     <div class="col-lg-12">
