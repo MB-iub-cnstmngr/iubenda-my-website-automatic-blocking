@@ -339,7 +339,7 @@ https://templatemo.com/tm-582-tale-seo-agency
                 </div>
               </div>
               <div class="col-lg-8">
-                <form id="contact-form" action="" method="post" onsubmit="return false;">
+  <form id="contact-form" action="" method="post" onsubmit="return false;">
   <div class="row">
     <div class="col-lg-12">
       <div class="section-heading">
@@ -387,7 +387,7 @@ https://templatemo.com/tm-582-tale-seo-agency
         </p>
         <p>
           <label>
-            <input type="checkbox" name="newsletter" data-cons-preference="newsletter"/>
+            <input type="checkbox" name="dem" data-cons-preference="dem"/>
             I agree to receiving a newsletter with information and offers about products and services by third parties (optional)
           </label>
         </p>
@@ -411,11 +411,23 @@ https://templatemo.com/tm-582-tale-seo-agency
           first_name: "name",
           last_name: "surname",
           email: "email"
+        },
+        preferences: {
+          legal_documents: "generic",
+          newsletter: "newsletter",
+          dem: "dem"
         }
       }
+    },
+    consent: {
+      legal_notices: [
+        { identifier: "privacy_policy" },
+        { identifier: "cookie_policy" },
+        { identifier: "terms" }
+      ]
     }
   }])
-</script>               
+</script>            
                 <div class="more-info">
                   <div class="row">
                     <div class="col-lg-4">
