@@ -402,32 +402,58 @@ https://templatemo.com/tm-582-tale-seo-agency
 </form>
 <!-- load function for sending data to the Consent Database when a user fills in and submits the form -->                
 <script type="text/javascript">
-  _iub.cons_instructions.push(["load", {
-    submitElement: document.getElementById("contact-submit"),
-    form: {
-      selector: document.getElementById("contact-form"),
-      map: {
-        subject: {
-          first_name: "name",
-          last_name: "surname",
-          email: "email"
-        },
-        preferences: {
-          legal_documents: "generic",
-          newsletter: "newsletter",
-          offer: "offer"
-        }
-      }
-    },
-    consent: {
-      legal_notices: [
-        { identifier: "privacy_policy" },
-        { identifier: "cookie_policy" },
-        { identifier: "terms" }
-      ]
+  function getCookiePreferences() {
+    if (window._iub && _iub.cs && _iub.cs.api &&
+        typeof _iub.cs.api.getPreferences === "function") {
+      var prefs = _iub.cs.api.getPreferences();
+      return prefs ? JSON.parse(JSON.stringify(prefs)) : null;
     }
-  }])
-</script>            
+    return null;
+  }
+
+  var contactForm = document.getElementById("contact-form");
+  var consentSent = false;
+
+  contactForm.addEventListener("submit", function (e) {
+    if (consentSent) return;
+    e.preventDefault();
+
+    var finish = function () {
+      consentSent = true;
+      contactForm.submit();
+    };
+    
+       _iub.cons_instructions.push(["submit", {
+      form: {
+        selector: contactForm,
+        map: {
+          subject: {
+            first_name: "name",
+            last_name: "surname",
+            email: "email"
+          },
+          preferences: {
+            legal_documents: "generic",
+            newsletter: "newsletter",
+            offer: "offer"
+          }
+        }
+      },
+      consent: {
+        preferences: {
+          cookie_preferences: getCookiePreferences()
+        },
+        legal_notices: [
+          { identifier: "privacy_policy" },
+          { identifier: "cookie_policy" },
+          { identifier: "terms" }
+        ]
+      }
+    }, {
+      success: finish,
+      error: finish
+    }]);
+  });      
                 <div class="more-info">
                   <div class="row">
                     <div class="col-lg-4">
